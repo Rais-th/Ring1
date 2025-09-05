@@ -95,7 +95,7 @@ export default function Page() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsInitialBlur(false)
-    }, 1500)
+    }, 2500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -109,7 +109,7 @@ export default function Page() {
           setTimeout(() => {
             setCurrentScreen(currentScreen + 1)
             setIsAnimating(false)
-          }, 300)
+          }, 1500)
         }
       }, 2000)
     } else if (currentScreen < screens.length - 1) {
@@ -117,7 +117,7 @@ export default function Page() {
       setTimeout(() => {
         setCurrentScreen(currentScreen + 1)
         setIsAnimating(false)
-      }, 300)
+      }, 1500)
     }
   }
 
@@ -129,9 +129,9 @@ export default function Page() {
 
       <section
         className={cn(
-          "relative z-20 px-8 max-w-2xl mx-auto text-center transition-all duration-1000 ease-in-out",
-          isAnimating ? "opacity-0 scale-95 blur-md" : "opacity-100 scale-100",
-          isInitialBlur ? "blur-lg opacity-60" : "blur-none opacity-100",
+          "relative z-20 px-8 max-w-2xl mx-auto text-center transition-all duration-1500 ease-in-out",
+          isInitialBlur ? "blur-2xl opacity-30 scale-95" : 
+          isAnimating ? "opacity-0 scale-90 blur-xl" : "opacity-100 scale-100 blur-none",
           current.isProfessional && !isAnimating ? "bg-black border border-white/10 rounded-[15px] p-5 shadow-2xl shadow-black/90" : "",
         )}
       >
